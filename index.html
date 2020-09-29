@@ -7,16 +7,31 @@
 
   <body>
     <a-scene>
-      <a-camera universal-controls>
-        <a-entity
-          raycaster="far: 150; objects: .intersectable"
-          cursor
-          geometry="primitive: ring; radiusOuter: 0.015;
-                              radiusInner: 0.01; segmentsTheta: 32"
-          material="color: #283644; shader: flat"
-          position="0 0 -0.75"
-        ></a-entity>
-      </a-camera>
+      <!--Human start and reticle-->
+      <a-entity position="0 0 0">
+        <a-camera universal-controls>
+          <a-entity
+            raycaster="far: 150; objects: .intersectable"
+            cursor
+            geometry="primitive: ring; radiusOuter: 0.015;
+            radiusInner: 0.01; segmentsTheta: 32"
+            material="color: #283644; shader: flat"
+            position="0 0 -0.75"
+          ></a-entity>
+        </a-camera>
+      </a-entity>
+
+      <!--Self made objects-->
+      <assets>
+        <a-asset-item id="desk" src="Desk.obj"></a-asset-item>
+        <a-asset-item id="desk_matterial" src="Desk.mtl"></a-asset-item>
+      </assets>
+      <a-obj-model
+        src="#desk"
+        mtl="#desk_matterial"
+        position="1 1 1"
+        scale="20 20 20"
+      ></a-obj-model>
 
       <!-- 
         CORDS: right, up, backwards
