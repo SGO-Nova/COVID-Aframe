@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <title>Ryan Browning - COVID project</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <!-- 
+        CORDS: right, up, backwards
+        Depth: forward/backwards
+        Height: up/down
+        widh: left/right
+      -->
+
+      <!--LIGHT-->
+      <a-light type="ambient" color="#CCC"></a-light>
+      <!--FLOOR-->
+      <a-box
+        color="#4e433f"
+        shadow
+        material="shader: flat"
+        width="20"
+        height="1"
+        depth="20"
+        position="-9 0 -9"
+      >
+      </a-box>
+      <!--CEILING-->
+      <a-box
+        color="#DEDEDE"
+        shadow
+        width="20"
+        height="1"
+        depth="20"
+        position="-9 3 -9"
+      >
+      </a-box>
+
+      <!--Walls-->
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width=".1"
+        height="4"
+        depth="3.08"
+        position="-1 2 -0.51"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width=".1"
+        height="4"
+        depth="7.08"
+        position="1 2 -2.51"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width=".1"
+        height=".75"
+        depth="2"
+        position="1 .75 -7.01"
+      ></a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width=".1"
+        height=".75"
+        depth="2"
+        position="1 2.75 -7.01"
+      ></a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width=".1"
+        height="4"
+        depth="1"
+        position="1 2 -8"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width=".1"
+        height="4"
+        depth="7.08"
+        position="-4 2 -2.51"
+      ></a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width=".1"
+        height="4"
+        depth="2"
+        position="-5 2 -7.01"
+      ></a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width="5"
+        height="4"
+        depth=".1"
+        position="-1.5 2 1"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width="1.5"
+        height="4"
+        depth=".1"
+        position="-1.75 2 -2"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width="1.5"
+        height="2"
+        depth=".1"
+        position="-2.75 3 -2"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width="1.5"
+        height="4"
+        depth=".1"
+        position="-4.25 2 -2"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width="1"
+        height="4"
+        depth=".1"
+        position="-4.5 2 -6"
+      >
+      </a-box>
+      <a-box
+        color="#F0EAD6"
+        shadow
+        width="6"
+        height="3"
+        depth=".1"
+        position="-2.0 2 -8"
+      >
+      </a-box>
+      <a-sky color="#aeaeae"></a-sky>
+    </a-scene>
+  </body>
+</html>
