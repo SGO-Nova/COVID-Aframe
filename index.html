@@ -28,7 +28,9 @@
       </assets>
       <a-entity
         obj-model="obj: #desk; mtl: #desk_matterial"
-        scale="1 1 1"
+        scale=".5 .5 .5"
+        position="-4.753 0.368 -7.214"
+        shadow="recieve: true"
       ></a-entity>
 
       <!-- 
@@ -38,12 +40,10 @@
         widh: left/right
       -->
 
-      <!--LIGHT-->
-      <a-light type="ambient" color="#CCC"></a-light>
       <!--FLOOR-->
       <a-box
         color="#4e433f"
-        shadow
+        shadow="recieve: true"
         material="shader: flat"
         width="20"
         height="1"
@@ -51,21 +51,43 @@
         position="-9 0 -9"
       >
       </a-box>
+
+      <!--Lights-->
+      <a-entity
+        id="lightSphere"
+        geometry="primitive: sphere; radius: .1"
+        light="type: point; color: #FFF; castShadow: true"
+        position="5 5 0"
+      >
+      </a-entity>
+      <a-light type="ambient" intensity="0.5"></a-light>
+      <a-entity
+        geometry="primitive: sphere; radius: .1"
+        light="type: point; color: #FFF; castShadow: true; intensity: .3"
+        position="-2.06 2.485 -4.119"
+        material="color:#FFFFFF"
+      >
+      </a-entity>
+
       <!--CEILING-->
       <a-box
         color="#DEDEDE"
-        shadow
+        shadow="recieve: true"
         width="20"
         height="1"
         depth="20"
-        position="-9 3 -9"
+        position="-4.03281 3 -3.03761"
+        material=""
+        geometry=""
+        scale="0.5 0.5 0.5"
+        visible=""
       >
       </a-box>
 
       <!--Walls-->
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="cast: true"
         width=".1"
         height="4"
         depth="3.08"
@@ -74,7 +96,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="cast: true"
         width=".1"
         height="4"
         depth="7.08"
@@ -83,7 +105,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width=".1"
         height=".75"
         depth="2"
@@ -91,7 +113,7 @@
       ></a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width=".1"
         height=".75"
         depth="2"
@@ -99,7 +121,7 @@
       ></a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width=".1"
         height="4"
         depth="1"
@@ -108,7 +130,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width=".1"
         height="4"
         depth="7.08"
@@ -116,7 +138,7 @@
       ></a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width=".1"
         height="4"
         depth="2"
@@ -124,7 +146,7 @@
       ></a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width="5"
         height="4"
         depth=".1"
@@ -133,7 +155,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width="1.5"
         height="4"
         depth=".1"
@@ -142,7 +164,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width="1.5"
         height="2"
         depth=".1"
@@ -151,7 +173,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width="1.5"
         height="4"
         depth=".1"
@@ -160,7 +182,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width="1"
         height="4"
         depth=".1"
@@ -169,7 +191,7 @@
       </a-box>
       <a-box
         color="#F0EAD6"
-        shadow
+        shadow="recieve: true"
         width="6"
         height="3"
         depth=".1"
@@ -177,7 +199,249 @@
       >
       </a-box>
 
-      <a-sky color="#aeaeae"></a-sky>
+      <!--Doors-->
+      <a-box
+        color="#FFF"
+        width=".1"
+        height="2"
+        depth="1"
+        position=".99 1.5 0"
+        material="src: door.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height="2"
+        depth="1"
+        position="-3 1.5 -2.01"
+        rotation="0 90 0"
+        material="src: door.jpg"
+      ></a-box>
+
+      <!--Chair-->
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.99 0.418 -7.236"
+        rotation="90 0 0"
+        shadow="recieve: true"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.993 0.418 -6.8"
+        rotation="90 0 0"
+        shadow="recieve: true"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.791 0.869 -7.011"
+        scale="5.01 1 .556"
+        shadow="recieve: true"
+        material="src: wood.jpg"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.595 0.408 -7.235"
+        rotation="90 0 0"
+        shadow="recieve: true"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.593 0.408 -6.786"
+        rotation="90 0 0"
+        shadow="recieve: true"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.571 1.148 -6.875"
+        rotation="-90 0 0"
+        scale=".49 1 .54"
+        shadow="recieve: true"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.571 1.148 -7.170"
+        rotation="-90 0 0"
+        scale=".49 1 .54"
+        shadow="recieve: true"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.583 1.279 -7.011"
+        scale="0.750 3.530 0.480"
+        shadow="recieve: true"
+        material="src: wood.jpg"
+      >
+      </a-box>
+
+      <!--PC-->
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-4.467 1.506 -7.762"
+        scale="7.100 5.830 0.250"
+        shadow="recieve: true"
+        material="src: metal.jpg"
+      >
+      </a-box>
+
+      <!--Monitor-->
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-4.472 1.405 -7.011"
+        scale="0.422 3.530 0.112"
+        rotation="0 0 -19.906"
+        shadow="recieve: true"
+        material="src: plastic.jpg"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-4.507 1.210 -7.028"
+        scale="2.390 0.538 0.480"
+        shadow="recieve: true"
+        material="src: plastic.jpg"
+      >
+      </a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-4.402 1.660 -6.990"
+        scale="0.333 5.039 1.012"
+        shadow="recieve: true"
+      >
+      </a-box>
+      <!--screen-->
+      <a-plane
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-4.38 1.660 -6.990"
+        scale="11 5.039 1.012"
+        shadow="recieve: true"
+        material="src: FavAnimu.mp4"
+        rotation="0 90 0"
+      >
+      </a-plane>
+
+      <!--Bed-->
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-0.809 0.418 -7.875"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-2.468 0.418 -7.875"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-0.809 0.418 -5.723"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-2.468 0.418 -5.723"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-1.662 0.888 -6.779"
+        rotation="90 0 0"
+        scale="20.448 23.405 0.2"
+        shadow="recieve: true"
+        material="src: blue.jpg"
+      ></a-box>
+
+      <!--pillows-->
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-2.089 1.029 -7.494"
+        rotation="90 0 0"
+        scale="7.721 4.920 0.070"
+        shadow="recieve: true"
+        material="src: pillow.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-1.239 1.029 -7.494"
+        rotation="90 0 0"
+        scale="7.721 4.920 0.070"
+        shadow="recieve: true"
+        material="src: pillow.jpg"
+      ></a-box>
+      <a-sky color="#87CEEB"></a-sky>
     </a-scene>
   </body>
 </html>
