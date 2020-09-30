@@ -1,22 +1,62 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Ryan Browning - COVID project</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  </head>
+    <script src="libs/aframe.min.js"></script>
 
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+
+    <script>
+      AFRAME.registerComponent("turnon-off", {
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener("click", function () {
+            if (el.getAttribute("light").intensity == 0.3) {
+              el.setAttribute("light", { intensity: 0.01 });
+            } else {
+              el.setAttribute("light", { intensity: 0.3 });
+            }
+          });
+        },
+      });
+    </script>
+    <script>
+      AFRAME.registerComponent("covid", {
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+          var mu = document.querySelector("#mungus");
+          var an = document.querySelector("#animu");
+          var sc = document.querySelector("#screen");
+
+          el.addEventListener("click", function () {
+            console.log(sc.getAttribute("material").src);
+            if (sc.getAttribute("material").src == mu) {
+              sc.setAttribute("material", { src: an });
+            } else {
+              sc.setAttribute("material", { src: mu });
+            }
+          });
+        },
+      });
+    </script>
+  </head>
   <body>
     <a-scene>
-      <!--Human start and reticle-->
+      <a-assets>
+        <video id="mungus" autoplay loop="true" src="mungus.mp4"></video>
+        <video id="animu" autoplay loop="true" src="FavAnimu.mp4"></video>
+      </a-assets>
+      <a-sky color="#87CEEB"></a-sky>
       <a-entity position="0 0 0">
         <a-camera universal-controls>
           <a-entity
             raycaster="far: 150; objects: .intersectable"
             cursor
-            geometry="primitive: ring; radiusOuter: 0.015;
-            radiusInner: 0.01; segmentsTheta: 32"
+            geometry="primitive: ring; radiusOuter: 0.0015;
+            radiusInner: 0.001; segmentsTheta: 32"
             material="color: #283644; shader: flat"
-            position="0 0 -0.75"
+            position="0 0 -0.1"
           ></a-entity>
         </a-camera>
       </a-entity>
@@ -33,12 +73,16 @@
         shadow="recieve: true"
       ></a-entity>
 
-      <!-- 
-        CORDS: right, up, backwards
-        Depth: forward/backwards
-        Height: up/down
-        widh: left/right
-      -->
+      <!--Box interaction-->
+      <a-box
+        color="#cecece"
+        width=".1"
+        height=".1"
+        depth=".1"
+        position=".99 1.5 -1 "
+        class="intersectable"
+        covid
+      ></a-box>
 
       <!--FLOOR-->
       <a-box
@@ -56,16 +100,19 @@
       <a-entity
         id="lightSphere"
         geometry="primitive: sphere; radius: .1"
-        light="type: point; color: #FFF; castShadow: true"
+        light="type: point; color: #FFF; castShadow: true; intensity: .1"
         position="5 5 0"
+        material="color:#212121"
       >
       </a-entity>
       <a-light type="ambient" intensity="0.5"></a-light>
       <a-entity
-        geometry="primitive: sphere; radius: .1"
+        geometry="primitive: sphere; radius: .16"
         light="type: point; color: #FFF; castShadow: true; intensity: .3"
-        position="-2.06 2.485 -4.119"
+        position="-2.06 2.45 -4.119"
         material="color:#FFFFFF"
+        class="intersectable"
+        turnon-off
       >
       </a-entity>
 
@@ -216,7 +263,8 @@
         position="-3 1.5 -2.01"
         rotation="0 90 0"
         material="src: door.jpg"
-      ></a-box>
+      >
+      </a-box>
 
       <!--Chair-->
       <a-box
@@ -326,7 +374,6 @@
         position="-4.472 1.405 -7.011"
         scale="0.422 3.530 0.112"
         rotation="0 0 -19.906"
-        shadow="recieve: true"
         material="src: plastic.jpg"
       >
       </a-box>
@@ -337,7 +384,6 @@
         depth="1"
         position="-4.507 1.210 -7.028"
         scale="2.390 0.538 0.480"
-        shadow="recieve: true"
         material="src: plastic.jpg"
       >
       </a-box>
@@ -348,20 +394,21 @@
         depth="1"
         position="-4.402 1.660 -6.990"
         scale="0.333 5.039 1.012"
-        shadow="recieve: true"
       >
       </a-box>
       <!--screen-->
       <a-plane
+        id="screen"
         color="#FFF"
         width=".1"
         height=".1"
         depth="1"
-        position="-4.38 1.660 -6.990"
+        position="-4.379 1.660 -6.990"
         scale="11 5.039 1.012"
-        shadow="recieve: true"
-        material="src: FavAnimu.mp4"
+        material="src: #animu"
         rotation="0 90 0"
+        sound="src: url(Never Gonna Give You Up.mp3); on: click; volume: .5"
+        class="intersectable"
       >
       </a-plane>
 
@@ -441,7 +488,107 @@
         shadow="recieve: true"
         material="src: pillow.jpg"
       ></a-box>
-      <a-sky color="#87CEEB"></a-sky>
+
+      <!--FAN-->
+      <a-cylinder
+        color="black"
+        height="1"
+        radius=".1"
+        position="-2.06 3 -4.119"
+      >
+        <a-animation
+          attribute="rotation"
+          to="0 360 0"
+          dur="3000"
+          repeat="indefinite"
+          easing="linear"
+        >
+        </a-animation>
+        <a-box
+          width="1"
+          height=".005"
+          depth=".2"
+          position="-.5 -.4 0"
+          rotation="10 0 0"
+        >
+        </a-box>
+        <a-box
+          width="1"
+          height=".005"
+          depth=".2"
+          position=".5 -.4 0"
+          rotation="-10 0 0"
+        >
+        </a-box>
+        <a-box
+          width=".2"
+          height=".005"
+          depth="1"
+          position="0 -.4 .5"
+          rotation="0 0 -10"
+        >
+        </a-box>
+        <a-box
+          width=".2"
+          height=".005"
+          depth="1"
+          position="0 -.4 -.5"
+          rotation="0 0 10"
+        >
+        </a-box>
+      </a-cylinder>
+
+      <!--nightstand-->
+      <a-box
+        color="#FFF"
+        width=".75"
+        height=".1"
+        depth="1"
+        position=".125 0.918 -7.625"
+        rotation="0 90 0"
+        shadow="recieve: true"
+        material="src: wood.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-.25 0.418 -7.875"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position=".5 0.418 -7.875"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-.25 0.418 -7.375"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
+      <a-box
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position=".5 0.418 -7.375"
+        rotation="90 0 0"
+        shadow="recieve: true"
+        material="src: table.jpg"
+      ></a-box>
     </a-scene>
   </body>
 </html>
