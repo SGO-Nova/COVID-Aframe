@@ -28,13 +28,40 @@
           var mu = document.querySelector("#mungus");
           var an = document.querySelector("#animu");
           var sc = document.querySelector("#screen");
+          var wo = document.querySelector("#work");
+          var wb = document.querySelector("#work_b");
+          var wa = document.querySelector("#work_a");
+          var pa = document.querySelector("#paint");
+          var st = document.querySelector("#star");
+          var c1 = document.querySelector("#s1");
+          var c2 = document.querySelector("#s2");
+          var c3 = document.querySelector("#s3");
+          var c4 = document.querySelector("#s4");
+          var c5 = document.querySelector("#s5");
+          var c6 = document.querySelector("#s6");
 
           el.addEventListener("click", function () {
             console.log(sc.getAttribute("material").src);
             if (sc.getAttribute("material").src == mu) {
               sc.setAttribute("material", { src: an });
+              wo.setAttribute("material", { src: wb });
+              pa.setAttribute("position", "-3.929 1.660 3.590");
+              c1.setAttribute("position", "-2 5.4 -4");
+              c2.setAttribute("position", "-2 5.4 -4");
+              c3.setAttribute("position", "-2 5.4 -4");
+              c4.setAttribute("position", "-2 5.4 -4");
+              c5.setAttribute("position", "-2 5.4 -4");
+              c6.setAttribute("position", "-2 5.4 -4");
             } else {
               sc.setAttribute("material", { src: mu });
+              wo.setAttribute("material", { src: wa });
+              pa.setAttribute("position", "-3.929 1.660 -3.590");
+              c1.setAttribute("position", "-2 .4 -4");
+              c2.setAttribute("position", "-1.75 .55 -2");
+              c3.setAttribute("position", "-3 .4 -5");
+              c4.setAttribute("position", "-2 .55 -4");
+              c5.setAttribute("position", "0.5 .4 -3");
+              c6.setAttribute("position", "0 .55 -5");
             }
           });
         },
@@ -46,6 +73,9 @@
       <a-assets>
         <video id="mungus" autoplay loop="true" src="mungus.mp4"></video>
         <video id="animu" autoplay loop="true" src="FavAnimu.mp4"></video>
+        <img id="work_b" src="Work_before.png" />
+        <img id="work_a" src="Work_after.png" />
+        <img id="star" src="star.jpg" />
       </a-assets>
       <a-sky color="#87CEEB"></a-sky>
       <a-entity position="0 0 0">
@@ -65,12 +95,71 @@
       <assets>
         <a-asset-item id="desk" src="Desk.obj"></a-asset-item>
         <a-asset-item id="desk_matterial" src="Desk.mtl"></a-asset-item>
+        <a-asset-item id="t1" src="Baggy T.obj"></a-asset-item>
+        <a-asset-item id="t1_matterial" src="Baggy T.mtl"></a-asset-item>
+        <a-asset-item id="t2" src="T Shirt.obj"></a-asset-item>
+        <a-asset-item id="t2_matterial" src="T Shirt.mtl"></a-asset-item>
       </assets>
+
       <a-entity
         obj-model="obj: #desk; mtl: #desk_matterial"
         scale=".5 .5 .5"
         position="-4.753 0.368 -7.214"
         shadow="recieve: true"
+      ></a-entity>
+      <a-entity
+        id="s1"
+        obj-model="obj: #t1; mtl: #t1_matterial"
+        scale=".009 .009 .009"
+        position="-2 5.4 -4"
+        rotation="90 30 0"
+        shadow="recieve: true"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="s2"
+        obj-model="obj: #t2; mtl: #t2_matterial"
+        scale=".009 .01 .009"
+        position="-2 5.4 -4"
+        rotation="270 10 0"
+        shadow="recieve: true"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="s3"
+        obj-model="obj: #t1; mtl: #t1_matterial"
+        scale=".009 .009 .009"
+        position="-2 5.4 -4"
+        rotation="90 70 0"
+        shadow="recieve: true"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="s4"
+        obj-model="obj: #t2; mtl: #t2_matterial"
+        scale=".009 .01 .009"
+        position="-2 5.4 -4"
+        rotation="270 50 0"
+        shadow="recieve: true"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="s5"
+        obj-model="obj: #t1; mtl: #t1_matterial"
+        scale=".009 .009 .009"
+        position="-2 5.4 -4"
+        rotation="90 190 0"
+        shadow="recieve: true"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="s6"
+        obj-model="obj: #t2; mtl: #t2_matterial"
+        scale=".009 .01 .009"
+        position="-2 5.4 -4"
+        rotation="270 30 0"
+        shadow="recieve: true"
+        color="#FFF"
       ></a-entity>
 
       <!--Box interaction-->
@@ -93,6 +182,15 @@
         height="1"
         depth="20"
         position="-9 0 -9"
+      ></a-box>
+      <a-box
+        color="#2cac00"
+        shadow="recieve: true"
+        material="shader: flat"
+        width="20"
+        height="1"
+        depth="40"
+        position="11 0 -9"
       >
       </a-box>
 
@@ -589,6 +687,32 @@
         shadow="recieve: true"
         material="src: table.jpg"
       ></a-box>
+
+      <!--Work sched-->
+      <a-plane
+        id="work"
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.929 1.660 -4.990"
+        scale="6 9 1.012"
+        material="src: #work_b"
+        rotation="0 90 0"
+      >
+      </a-plane>
+      <!--Painting-->
+      <a-plane
+        id="paint"
+        color="#FFF"
+        width=".1"
+        height=".1"
+        depth="1"
+        position="-3.929 1.660 3.590"
+        scale="18 10 1.012"
+        material="src: #star"
+        rotation="0 90 0"
+      ></a-plane>
     </a-scene>
   </body>
 </html>
