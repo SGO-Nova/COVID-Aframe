@@ -8,55 +8,55 @@ You can view my project at this [link](https://sgo-nova.github.io/COVID-Aframe/)
 
 ## Models
 
-### _Alarm Clock_\
+### _Alarm Clock_
 
 ![Alarm Clock](Pictures/AlarmClock.PNG)
 
-### _Bed_\
+### _Bed_
 
 ![Bed](Pictures/Bed.PNG)
 
-### _Chair_\
+### _Chair_
 
 ![Chair](Pictures/Chair.PNG)
 
-### _Computer_\
+### _Computer_
 
 ![Computer](Pictures/Computer.PNG)
 
-### _Desk_\
+### _Desk_
 
 ![Desk](Pictures/Desk.PNG)
 
-### _Fan & Light_\
+### _Fan & Light_
 
 ![Fan & Light](Pictures/Fan.PNG)
 
-### _Light Switch_\
+### _Light Switch_
 
 ![Light Switch](Pictures/Light_On.PNG)
 
-### _Monitor_\
+### _Monitor_
 
 ![Monitor](Pictures/Monitor.PNG)
 
-### _Night Stand_\
+### _Night Stand_
 
 ![Night Stand](Pictures/NightStand.PNG)
 
-### _Shirt_\
+### _Shirt_
 
 ![Shirt](Pictures/Shirt.PNG)
 
-### _Teleport Nodes_\
+### _Teleport Nodes_
 
 ![Teleport Nodes](Pictures/TeleportNode.PNG)
 
-### _TV_\
+### _TV_
 
 ![TV](Pictures/TV.PNG)
 
-### _Wall Art_\
+### _Wall Art_
 
 ![Wall Art](Pictures/WallArt.PNG)
 
