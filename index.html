@@ -29,6 +29,9 @@
           var data = this.data;
           var el = this.el;
           var hu = document.querySelector("#human");
+          var te1 = document.querySelector("#teleport1");
+          var te2 = document.querySelector("#teleport2");
+          var te3 = document.querySelector("#teleport3");
 
           el.addEventListener("click", function () {
             hu.setAttribute("position", {
@@ -36,6 +39,9 @@
               y: hu.getAttribute("position").y,
               z: el.getAttribute("position").z,
             });
+            te1.setAttribute("position", "0 10 0");
+            te2.setAttribute("position", "0 10 0");
+            te3.setAttribute("position", "0 10 0");
           });
         },
       });
@@ -61,6 +67,7 @@
           var s2 = document.querySelector("#shirt02");
           var s3 = document.querySelector("#shirt03");
           var tv = document.querySelector("#tv_m");
+          var mo = document.querySelector("#mode");
 
           el.addEventListener("click", function () {
             console.log(sc.getAttribute("material").src);
@@ -78,6 +85,7 @@
               s2.setAttribute("position", "-3.1 .53 5");
               s3.setAttribute("position", "-.5 .53 4.5");
               tv.setAttribute("position", "-1.75 1.5 2.25");
+              mo.setAttribute("value", "COVID mode \n\nOFF");
             } else {
               sc.setAttribute("material", { src: mu });
               wo.setAttribute("material", { src: wa });
@@ -92,6 +100,7 @@
               s2.setAttribute("position", "-3.1 .53 -5");
               s3.setAttribute("position", "-.5 .53 -4.5");
               tv.setAttribute("position", "-1.75 1.5 -2.25");
+              mo.setAttribute("value", "COVID mode \n\nON");
             }
           });
         },
@@ -108,17 +117,20 @@
         <img id="star" src="star.jpg" />
       </a-assets>
       <a-sky color="#87CEEB"></a-sky>
-      <a-entity position="0 0 -3">
-        <a-camera universal-controls>
-          <a-entity
-            raycaster="far: 150; objects: .intersectable"
-            cursor
-            geometry="primitive: ring; radiusOuter: 0.015;
-          radiusInner: 0.01; segmentsTheta: 32"
-            material="color: #283644; shader: flat"
-            position="0 0 -0.75"
-          ></a-entity>
-        </a-camera>
+      <a-entity
+        id="human"
+        camera="userHeight: 1.75"
+        universal-controls
+        position="0 0 -3.5"
+      >
+        <a-entity
+          cursor="fuse: false"
+          fusetime="500"
+          position="0 0 -.25"
+          geometry="primitive: ring; radiusOuter: 0.005;
+          radiusInner: 0.0025"
+          material="color: black; shader: flat"
+        ></a-entity>
       </a-entity>
 
       <!--Self made objects-->
@@ -199,7 +211,7 @@
         width=".1"
         height=".1"
         depth=".1"
-        position=".99 1.5 -1.2 "
+        position=".99 1.5 -1.5 "
         class="intersectable"
         covid
       ></a-box>
@@ -883,6 +895,48 @@
         material="opacity: .2"
         move
       ></a-cylinder>
+
+      <!--Text stuff-->
+      <a-plane
+        id="teleport1"
+        position="-.5 1.2 -6"
+        rotation="0 0 0"
+        material="opacity: 0"
+        ><a-text width="2" value="Try looking at the cylinder!"></a-text
+      ></a-plane>
+      <a-plane
+        id="teleport2"
+        position=".5 1.2 -1"
+        rotation="0 180 0"
+        material="opacity: 0"
+      >
+        <a-text width="2" value="Try looking at the cylinder!"></a-text>
+      </a-plane>
+      <a-plane
+        id="teleport3"
+        position="-3.25 1.2 -3"
+        rotation="0 90 0"
+        material="opacity: 0"
+      >
+        <a-text width="2" value="Try looking at the cylinder!"></a-text>
+      </a-plane>
+      <a-plane
+        position=".95 1.75 -1.25"
+        rotation="0 -90 0"
+        material="opacity: 0"
+      >
+        <a-text width="1" value="Try turning the lights off!"></a-text>
+      </a-plane>
+      <a-plane
+        position=".95 1.7 -1.63"
+        rotation="0 -90 0"
+        material="opacity: 0"
+      >
+        <a-text id="mode" width="1" value="COVID mode \n\nOFF"> </a-text>
+      </a-plane>
+      <a-plane position="-4.5 2 -6.8" rotation="0 90 0" material="opacity: 0">
+        <a-text width="2" value="Click me!"></a-text>
+      </a-plane>
     </a-scene>
   </body>
 </html>
