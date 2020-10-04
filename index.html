@@ -24,6 +24,23 @@
       });
     </script>
     <script>
+      AFRAME.registerComponent("move", {
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+          var hu = document.querySelector("#human");
+
+          el.addEventListener("click", function () {
+            hu.setAttribute("position", {
+              x: el.getAttribute("position").x,
+              y: hu.getAttribute("position").y,
+              z: el.getAttribute("position").z,
+            });
+          });
+        },
+      });
+    </script>
+    <script>
       AFRAME.registerComponent("covid", {
         init: function () {
           var data = this.data;
@@ -35,6 +52,15 @@
           var wb = document.querySelector("#work_b");
           var wa = document.querySelector("#work_a");
           var pa = document.querySelector("#paint");
+          var w1 = document.querySelector("#w1");
+          var w2 = document.querySelector("#w2");
+          var w3 = document.querySelector("#w3");
+          var w4 = document.querySelector("#w4");
+          var w5 = document.querySelector("#w5");
+          var s1 = document.querySelector("#shirt01");
+          var s2 = document.querySelector("#shirt02");
+          var s3 = document.querySelector("#shirt03");
+          var tv = document.querySelector("#tv_m");
 
           el.addEventListener("click", function () {
             console.log(sc.getAttribute("material").src);
@@ -43,11 +69,29 @@
               wo.setAttribute("material", { src: wb });
               pa.setAttribute("position", "-3.929 1.660 3.590");
               el.setAttribute("color", "#227538");
+              w1.setAttribute("position", "-2.5 2 7.95");
+              w2.setAttribute("position", "-2.1 2 7.95");
+              w3.setAttribute("position", "-1.6 2 7.95");
+              w4.setAttribute("position", "-1.1 2 7.95");
+              w5.setAttribute("position", "-0.7 2 7.95");
+              s1.setAttribute("position", "-2 .53 3");
+              s2.setAttribute("position", "-3.1 .53 5");
+              s3.setAttribute("position", "-.5 .53 4.5");
+              tv.setAttribute("position", "-1.75 1.5 2.25");
             } else {
               sc.setAttribute("material", { src: mu });
               wo.setAttribute("material", { src: wa });
               pa.setAttribute("position", "-3.929 1.660 -3.590");
               el.setAttribute("color", "#990f0f");
+              w1.setAttribute("position", "-2.5 2 -7.95");
+              w2.setAttribute("position", "-2.1 2 -7.95");
+              w3.setAttribute("position", "-1.6 2 -7.95");
+              w4.setAttribute("position", "-1.1 2 -7.95");
+              w5.setAttribute("position", "-0.7 2 -7.95");
+              s1.setAttribute("position", "-2 .53 -3");
+              s2.setAttribute("position", "-3.1 .53 -5");
+              s3.setAttribute("position", "-.5 .53 -4.5");
+              tv.setAttribute("position", "-1.75 1.5 -2.25");
             }
           });
         },
@@ -65,13 +109,15 @@
       </a-assets>
       <a-sky color="#87CEEB"></a-sky>
       <a-entity
-        camera="userHeight: 1.5"
+        id="human"
+        camera="userHeight: 1.75"
         universal-controls
         position="0 0 -3.5"
         rotation="0 90 0"
       >
         <a-entity
-          cursor="fuse: false"
+          cursor="fuse: true"
+          fusetime="500"
           position="0 0 -.75"
           geometry="primitive: ring; radiusOuter: 0.015;
             radiusInner: 0.01;"
@@ -83,6 +129,8 @@
       <assets>
         <a-asset-item id="desk" src="Desk.obj"></a-asset-item>
         <a-asset-item id="desk_matterial" src="Desk.mtl"></a-asset-item>
+        <a-asset-item id="shirt" src="shirt1.gltf"></a-asset-item>
+        <a-asset-item id="Tv" src="Tv.gltf"></a-asset-item>
       </assets>
 
       <a-entity
@@ -90,6 +138,43 @@
         scale=".5 .5 .5"
         position="-4.753 0.368 -7.214"
         shadow="recieve: true"
+      ></a-entity>
+      <a-entity
+        id="shirt01"
+        gltf-model="#shirt"
+        shadow="recieve: true"
+        scale=".15 .15 .025"
+        rotation="-90 57 0"
+        position="-2 .53 3"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="shirt02"
+        gltf-model="#shirt"
+        shadow="recieve: true"
+        scale=".15 .15 .025"
+        rotation="-90 167 0"
+        position="-3.1 .53 5"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="shirt03"
+        gltf-model="#shirt"
+        shadow="recieve: true"
+        scale=".15 .15 .025"
+        rotation="-90 266 0"
+        position="-.5 .53 4.5"
+        color="#FFF"
+      ></a-entity>
+      <a-entity
+        id="tv_m"
+        gltf-model="#Tv"
+        shadow="recieve: true"
+        position="-1.75 1.5 2.25"
+        scale=".5 .5 .5"
+        color="#FFF"
+        rotation="0 180 0"
+        covid
       ></a-entity>
 
       <!--Box interaction-->
@@ -698,7 +783,7 @@
         rotation="0 90 0"
       >
       </a-plane>
-      <!--Paintings-->
+      <!--Paintings/wall decor-->
       <a-plane
         id="paint"
         color="#FFF"
@@ -710,6 +795,61 @@
         material="src: #star"
         rotation="0 90 0"
       ></a-plane>
+      <a-box
+        id="w3"
+        color="#FFF"
+        width=".5"
+        height="1"
+        depth=".075"
+        position="-1.6 2 7.95"
+        shadow="recieve: true"
+        material="src: W3.PNG"
+      >
+      </a-box>
+      <a-box
+        id="w2"
+        color="#FFF"
+        width=".4"
+        height=".75"
+        depth=".075"
+        position="-2.1 2 7.95"
+        shadow="recieve: true"
+        material="src: W2.PNG"
+      >
+      </a-box>
+      <a-box
+        id="w1"
+        color="#FFF"
+        width=".3"
+        height=".6"
+        depth=".075"
+        position="-2.5 2 7.95"
+        shadow="recieve: true"
+        material="src: W1.PNG"
+      >
+      </a-box>
+      <a-box
+        id="w4"
+        color="#FFF"
+        width=".4"
+        height=".75"
+        depth=".075"
+        position="-1.1 2 7.95"
+        shadow="recieve: true"
+        material="src: W4.PNG"
+      >
+      </a-box>
+      <a-box
+        id="w5"
+        color="#FFF"
+        width=".3"
+        height=".6"
+        depth=".075"
+        position="-0.7 2 7.95"
+        shadow="recieve: true"
+        material="src: W5.PNG"
+      >
+      </a-box>
 
       <!--Teleport positions-->
       <a-cylinder
@@ -717,30 +857,35 @@
         radius=".2"
         height="1.1"
         material="opacity: .2"
+        move
       ></a-cylinder>
       <a-cylinder
         position="0 0 -1"
         radius=".2"
         height="1.1"
         material="opacity: .2"
+        move
       ></a-cylinder>
       <a-cylinder
         position="0 0 -6"
         radius=".2"
         height="1.1"
         material="opacity: .2"
+        move
       ></a-cylinder>
       <a-cylinder
         position="-3.25 0 -3.5"
         radius=".2"
         height="1.1"
         material="opacity: .2"
+        move
       ></a-cylinder>
       <a-cylinder
         position="-3.25 0 -7.5"
         radius=".2"
         height="1.1"
         material="opacity: .2"
+        move
       ></a-cylinder>
     </a-scene>
   </body>
