@@ -108,20 +108,17 @@
         <img id="star" src="star.jpg" />
       </a-assets>
       <a-sky color="#87CEEB"></a-sky>
-      <a-entity
-        id="human"
-        camera="userHeight: 1.75"
-        universal-controls
-        position="0 0 -3.5"
-      >
-        <a-entity
-          cursor="fuse: true"
-          fusetime="500"
-          position="0 0 -.75"
-          geometry="primitive: ring; radiusOuter: 0.015;
-            radiusInner: 0.01;"
-          material="color: black; shader: flat"
-        ></a-entity>
+      <a-entity position="0 0 -3">
+        <a-camera universal-controls>
+          <a-entity
+            raycaster="far: 150; objects: .intersectable"
+            cursor
+            geometry="primitive: ring; radiusOuter: 0.015;
+          radiusInner: 0.01; segmentsTheta: 32"
+            material="color: #283644; shader: flat"
+            position="0 0 -0.75"
+          ></a-entity>
+        </a-camera>
       </a-entity>
 
       <!--Self made objects-->
