@@ -8,6 +8,14 @@ You can also watch my 2 minute presentation at this [link](https://sgo-nova.gith
 
 ![COVID .gif](https://media.giphy.com/media/CTjL3dUOQKXsIeMN2S/giphy.gif)
 
+## About my Project
+
+This project was made with COVID in mind in my room. Things updated were items like my work schedule which was updated to work full time, content on my computer, wall decorations, cleanliness of my room, and additional TV on the wall. Every item in this project, except the TV was modeled by myself either in blender or with a-boxes and other shapes. This project took a lot longer than i expect due to learning a new language almost, and also because of my work schedule. It was a fun time creating a new world and learning at the same time.
+
+#### Bugs
+
+Some bugs are still in this project as there was no way to figure out how to fix them. This includes using cardboard and phones to view this. One day it work and the next it didn't with no code change. I have tried changing camera setting and using default settings, but nothing worked. The .mp4 on the monitor sometimes does not load and makes the user re-enter the site instead of refreshing as it would not fix itself.
+
 ## Models
 
 ### _Alarm Clock_
