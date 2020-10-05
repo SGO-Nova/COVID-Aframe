@@ -2,7 +2,7 @@
 
 This is my Aframe based VR project for the Texas Tech VR elective class in the CS department. This project was made to introduce many to the VR world and web based VR sites and Google Cardboard projects can be made with [Aframe](https://aframe.io/) and/or [THREE.js](https://threejs.org/). The project instructions were to create our view point and opinion about the COVID pandemic and how it effected us. In my project I chose my apartment room as my location as that's where I spend most of my time, both before and during the COVID pandemic.
 
-You can view my project at this [link](https://sgo-nova.github.io/COVID-Aframe/) or watch my demo at this link.
+You can view my project at this [link](https://sgo-nova.github.io/COVID-Aframe/) or watch my demo at this ![link](Pictures/MinuteVideo.mp4).
 
 ![COVID .gif](https://media.giphy.com/media/CTjL3dUOQKXsIeMN2S/giphy.gif)
 
@@ -71,4 +71,4 @@ Pillow picture [link](https://miauss.com/wp-content/uploads/2019/03/PC050007_1.j
 Metal texture [link](https://i.pinimg.com/originals/d4/02/d6/d402d650fd5aa58be87b6de5c87714b8.jpg)\
 Dark wood [link](https://1.bp.blogspot.com/-PIdDfu35WX8/WFfXlALv0GI/AAAAAAAARbo/oFlC2XodBOU9eDgROg5lOR2lUpR764XIgCLcB/w1200-h630-p-k-no-nu/seamless_black_fine_wood_texture_texturise.jpg)\
 Starry night [link](https://images-na.ssl-images-amazon.com/images/I/91iS91eizUL._AC_SX679_.jpg)\
-plastic picture [link](https://us.123rf.com/450wm/ensup/ensup1205/ensup120500113/13819569-black-plastic-texture.jpg?ver=6)\
+Plastic picture [link](https://us.123rf.com/450wm/ensup/ensup1205/ensup120500113/13819569-black-plastic-texture.jpg?ver=6)
